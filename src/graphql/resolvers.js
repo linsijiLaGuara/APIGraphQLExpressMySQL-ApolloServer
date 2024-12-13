@@ -1,9 +1,9 @@
-import { Categoria } from "./categoriaModels.js";
-import { Proveedor } from "./proveedorModels.js";
-import { Producto } from "./productoModels.js";
-import { Cliente } from "./clienteModels.js";
-import { Venta } from "./ventaModels.js";
-import { DetalleVenta } from "./detalleVentaModels.js";
+import { Categoria } from "../models/categoriaModels.js";
+import { Proveedor } from "../models/proveedorModels.js";
+import { Producto } from "../models/productoModels.js";
+import { Cliente } from "../models/clienteModels.js";
+import { Venta } from "../models/ventaModels.js";
+import { DetalleVenta } from "../models/detalleVentaModels.js";
 export const resolvers = {
   Query: {
     getCategorias: async () => {
