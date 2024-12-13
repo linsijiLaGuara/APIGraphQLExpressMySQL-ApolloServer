@@ -7,7 +7,12 @@ export const Categoria = sequelize.define('Categoria', {
     primaryKey: true,
     autoIncrement: true,
   },
-  nombre: {
+  nombre_categoria: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+
+  descripcion: {
     type: DataTypes.STRING,
     allowNull: false,
   },

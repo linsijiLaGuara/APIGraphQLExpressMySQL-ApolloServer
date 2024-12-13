@@ -6,92 +6,29 @@ import { Venta } from "../models/ventaModels.js";
 import { DetalleVenta } from "../models/detalleVentaModels.js";
 export const resolvers = {
   Query: {
-    getCategorias: async () => {
-      try {
-        return await Categoria.findAll();
-      } catch (error) {
-        throw new Error('Error al obtener las categorías');
-      }
+    ping() {
+      return 'pong'
     },
-    getProveedores: async () => {
-      try {
-        return await Proveedor.findAll();
-      } catch (error) {
-        throw new Error('Error al obtener los proveedores');
-      }
+    Categorias() {
+      return Categoria;
     },
-    getProductos: async () => {
-      try {
-        return await Producto.findAll();
-      } catch (error) {
-        throw new Error('Error al obtener los productos');
-      }
+    Proveedores() {
+      return Proveedor;
     },
-    getClientes: async () => {
-      try {
-        return await Cliente.findAll();
-      } catch (error) {
-        throw new Error('Error al obtener los clientes');
-      }
+    Productos() {
+      return Producto;
     },
-    getVentas: async () => {
-      try {
-        return await Venta.findAll();
-      } catch (error) {
-        throw new Error('Error al obtener las ventas');
-      }
+    Clientes() {
+      return Cliente;
     },
-    getDetallesVenta: async () => {
-      try {
-        return await Detalle_Venta.findAll();
-      } catch (error) {
-        throw new Error('Error al obtener los detalles de ventas');
-      }
+    Ventas() {
+      return Venta;
+    },
+    DetallesVenta() {
+      return DetalleVenta;
+
     },
   },
-  Mutation: {
-    createCategoria: async (_, { input }) => {
-      try {
-        return await Categoria.create(input);
-      } catch (error) {
-        throw new Error('Error al crear la categoría');
-      }
-    },
-    createProveedor: async (_, { input }) => {
-      try {
-        return await Proveedor.create(input);
-      } catch (error) {
-        throw new Error('Error al crear el proveedor');
-      }
-    },
-    createProducto: async (_, { input }) => {
-      try {
-        return await Producto.create(input);
-      } catch (error) {
-        throw new Error('Error al crear el producto');
-      }
-    },
-    createCliente: async (_, { input }) => {
-      try {
-        return await Cliente.create(input);
-      } catch (error) {
-        throw new Error('Error al crear el cliente');
-      }
-    },
-    createVenta: async (_, { input }) => {
-      try {
-        return await Venta.create(input);
-      } catch (error) {
-        throw new Error('Error al crear la venta');
-      }
-    },
-    createDetalleVenta: async (_, { input }) => {
-      try {
-        return await Detalle_Venta.create(input);
-      } catch (error) {
-        throw new Error('Error al crear el detalle de venta');
-      }
-    },
-  },
-};
+
+  };
 

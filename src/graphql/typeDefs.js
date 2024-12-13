@@ -1,43 +1,54 @@
 
 import { gql } from "graphql-tag";
 
-//definienco el squela graphql
+//difinicion el squela graphql
 export const typeDefs = gql`
+
+  type Query {
+  ping: String!
+    Categorias: [Categoria]!
+    Proveedores: [Proveedor]!
+   Productos: [Producto]!
+    Clientes: [Cliente]!
+    Ventas: [Venta]!
+    DetallesVenta: [DetalleVenta]!
+  }
+
   type Categoria {
     id_categoria: ID!
     nombre_categoria: String!
-    descripcion: String
+    descripcion: String!
   }
 
   type Proveedor {
     id_proveedor: ID!
     nombre: String!
-    telefono: String
-    email: String
-    direccion: String
+    telefono: String!
+    email: String!
+    direccion: String!
   }
 
   type Producto {
     id_producto: ID!
     nombre: String!
-    descripcion: String
-    id_categoria: Int
+    descripcion: String!
+    id_categoria: Int!
     precio_unitario: Float!
     cantidad: Int!
-    id_proveedor: Int
+    id_proveedor: Int!
   }
 
   type Cliente {
     id_cliente: ID!
     nombre: String!
-    telefono: String
-    email: String
-    direccion: String
+    telefono: String!
+    email: String!
+    direccion: String!
   }
 
   type Venta {
     id_venta: ID!
-    id_cliente: Int
+    id_cliente: Int!
     fecha_venta: String!
     total: Float!
   }
@@ -51,14 +62,7 @@ export const typeDefs = gql`
     subtotal: Float!
   }
 
-  type Query {
-    getCategorias: [Categoria]
-    getProveedores: [Proveedor]
-    getProductos: [Producto]
-    getClientes: [Cliente]
-    getVentas: [Venta]
-    getDetallesVenta: [DetalleVenta]
-  }
+
 
   input CategoriaInput {
     nombre_categoria: String!
