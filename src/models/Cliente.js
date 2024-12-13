@@ -1,22 +1,31 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/db'); // Asegúrate de que `db.js` exporta tu instancia de Sequelize
 
-const Categoria = sequelize.define('Categoria', {
-  id_categoria: {
+const Cliente = sequelize.define('Cliente', {
+  id_cliente: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  nombre_categoria: {
+  nombre: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  descripcion: {
+  telefono: {
     type: DataTypes.STRING,
   },
-}, {
-  tableName: 'categoria', // Nombre de la tabla en la base de datos
+  email: {
+    type: DataTypes.STRING,
+  },
+  direccion: {
+    type: DataTypes.STRING,
+  },
+}, 
+
+
+{
+  tableName: 'cliente', // Nombre de la tabla en la base de datos
   timestamps: false, // Si no tienes columnas de timestamps
 });
 
-module.exports = Categoria;
+module.exports = Cliente;
