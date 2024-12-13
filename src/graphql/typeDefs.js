@@ -2,7 +2,7 @@
 import { gql } from "graphql-tag";
 
 //definienco el squela graphql
-const typeDefs = gql`
+export const typeDefs = gql`
   type Categoria {
     id_categoria: ID!
     nombre_categoria: String!
@@ -112,4 +112,3 @@ const typeDefs = gql`
   }
 `;
 
-export default typeDefs;

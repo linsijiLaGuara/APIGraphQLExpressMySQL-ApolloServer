@@ -1,6 +1,6 @@
 import { createYoga } from "graphql-yoga";
 import { createServer } from "http";
-import { schema } from "./graphql/squema"; // Importa tu esquema correctamente
+import schema from "./graphql/schema.js"; // Importa tu esquema correctamente
 
 // Configura el servidor de Yoga
 const yoga = createYoga({
@@ -12,4 +12,4 @@ const yoga = createYoga({
 // Crea el servidor HTTP y pasa Yoga como manejador
 const server = createServer(yoga);
 
-module.exports = server;
+export default server;

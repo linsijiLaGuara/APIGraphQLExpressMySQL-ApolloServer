@@ -1,12 +1,12 @@
 const { Sequelize } = require("sequelize");
 const sequelize = require("../database/db");
 
-const Categoria = require("./Categoria");
-const Proveedor = require("./Proveedor");
-const Producto = require("./Producto");
-const Cliente = require("./Cliente");
-const Venta = require("./Venta");
-const DetalleVenta = require("./DetalleVenta");
+import { Categoria } from "./Categoria.js";
+import { Proveedor } from "./Proveedor.js";
+import { Producto } from "./Producto.js";
+import { Cliente } from "./Cliente.js";
+import { Venta } from "./Venta.js";
+import { DetalleVenta } from "./DetalleVenta.js";
 
 // Relaciones
 Producto.belongsTo(Categoria, { foreignKey: "id_categoria" });
@@ -15,12 +15,10 @@ Venta.belongsTo(Cliente, { foreignKey: "id_cliente" });
 DetalleVenta.belongsTo(Venta, { foreignKey: "id_venta" });
 DetalleVenta.belongsTo(Producto, { foreignKey: "id_producto" });
 
-module.exports = {
-  sequelize,
+export default (sequelize,
   Categoria,
   Proveedor,
   Producto,
   Cliente,
   Venta,
-  DetalleVenta,
-};
+  DetalleVenta);

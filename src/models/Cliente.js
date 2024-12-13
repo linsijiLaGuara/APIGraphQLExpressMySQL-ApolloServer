@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/db'); // Asegúrate de que `db.js` exporta tu instancia de Sequelize
 
-const Cliente = sequelize.define('Cliente', {
+export const Cliente = sequelize.define('Cliente', {
   id_cliente: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -28,4 +28,3 @@ const Cliente = sequelize.define('Cliente', {
   timestamps: false, // Si no tienes columnas de timestamps
 });
 
-module.exports = Cliente;

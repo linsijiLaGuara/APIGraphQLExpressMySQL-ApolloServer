@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/db');
 
-const Proveedor = sequelize.define('Proveedor', {
+export const Proveedor = sequelize.define('Proveedor', {
   id_proveedor: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -25,4 +25,4 @@ const Proveedor = sequelize.define('Proveedor', {
   timestamps: false,
 });
 
-module.exports = Proveedor;
+

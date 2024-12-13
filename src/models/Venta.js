@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/db'); // Asegúrate de que este archivo exporta la instancia de Sequelize
 
-const Venta = sequelize.define('Venta', {
+export const Venta = sequelize.define('Venta', {
   id_venta: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -30,4 +30,3 @@ const Venta = sequelize.define('Venta', {
   timestamps: false, // Si no tienes columnas createdAt y updatedAt
 });
 
-module.exports = Venta;

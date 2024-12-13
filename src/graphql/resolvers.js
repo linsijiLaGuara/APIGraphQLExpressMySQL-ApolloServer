@@ -1,6 +1,11 @@
-const { Categoria, Proveedor, Producto, Cliente, Venta, Detalle_Venta } = require('./models'); // Importa tus modelos Sequelize
-
-const resolvers = {
+import {
+  Categoria,
+  Proveedor,
+  Producto,
+  Cliente,
+  Venta
+} from "../models/index.js"
+export const resolvers = {
   Query: {
     getCategorias: async () => {
       try {
@@ -91,4 +96,3 @@ const resolvers = {
   },
 };
 
-module.exports = resolvers;
