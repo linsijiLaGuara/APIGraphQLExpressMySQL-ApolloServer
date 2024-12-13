@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-import {sequelize} from '../database/dbConfig.js'; // Asegúrate de que `db.js` exporta tu instancia de Sequelize
+import { sequelize } from '../database/dbConfig.js';
 
 export const Categoria = sequelize.define('Categoria', {
   id_categoria: {
@@ -7,16 +7,11 @@ export const Categoria = sequelize.define('Categoria', {
     primaryKey: true,
     autoIncrement: true,
   },
-  nombre_categoria: {
+  nombre: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  descripcion: {
-    type: DataTypes.STRING,
-  },
 }, {
-  tableName: 'categoria', // Nombre de la tabla en la base de datos
-  timestamps: false, // Si no tienes columnas de timestamps
+  tableName: 'categoria',
+  timestamps: false,
 });
-
-

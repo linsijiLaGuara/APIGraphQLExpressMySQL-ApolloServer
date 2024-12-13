@@ -1,5 +1,5 @@
-const { Sequelize } = require("sequelize");
-const sequelize = require("../database/db");
+import { DataTypes } from 'sequelize';
+import {sequelize} from '../database/dbConfig.js';
 
 import { Categoria } from "./categoriaModels.js";
 import { Proveedor } from "./proveedorModels.js";

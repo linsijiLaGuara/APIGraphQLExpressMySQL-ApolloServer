@@ -1,12 +1,19 @@
-const { Sequelize } = require('sequelize');
-require('dotenv').config();
+import { Sequelize } from "sequelize";
 
+
+if (!process.env.DATABASE_URL) {
+  throw new Error("La variable de entorno DATABASE_URL no está definida.");
+}
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: 'postgres'
+  dialect: "postgres",
+  protocol: "postgres",
+  logging: false, // Puedes cambiar a `true` si quieres ver las consultas en consola
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, // Cambia esto según la configuración de tu servidor
+    },
+  },
 });
 
-sequelize
-  .authenticate()
-  .then(() => console.log('Conexion establecida  con db'))
-  .catch((error) => console.log('Error al conectar ', error))
-module.exports = sequelize;
+export { sequelize };

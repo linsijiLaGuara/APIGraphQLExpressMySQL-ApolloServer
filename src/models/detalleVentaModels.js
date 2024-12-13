@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database/db'); // Asegúrate de que este archivo exporta la instancia de Sequelize
+import { DataTypes } from 'sequelize';
+import {sequelize} from '../database/dbConfig.js'; // Asegúrate de que este archivo exporta la instancia de Sequelize
 
 export const DetalleVenta = sequelize.define('DetalleVenta', {
   id_detalle: {
