@@ -1,10 +1,9 @@
-import {
-  Categoria,
-  Proveedor,
-  Producto,
-  Cliente,
-  Venta
-} from "../models/index.js"
+import { Categoria } from "./categoriaModels.js";
+import { Proveedor } from "./proveedorModels.js";
+import { Producto } from "./productoModels.js";
+import { Cliente } from "./clienteModels.js";
+import { Venta } from "./ventaModels.js";
+import { DetalleVenta } from "./detalleVentaModels.js";
 export const resolvers = {
   Query: {
     getCategorias: async () => {

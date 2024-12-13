@@ -1,12 +1,12 @@
 const { Sequelize } = require("sequelize");
 const sequelize = require("../database/db");
 
-import { Categoria } from "./Categoria.js";
-import { Proveedor } from "./Proveedor.js";
-import { Producto } from "./Producto.js";
-import { Cliente } from "./Cliente.js";
-import { Venta } from "./Venta.js";
-import { DetalleVenta } from "./DetalleVenta.js";
+import { Categoria } from "./categoriaModels.js";
+import { Proveedor } from "./proveedorModels.js";
+import { Producto } from "./productoModels.js";
+import { Cliente } from "./clienteModels.js";
+import { Venta } from "./ventaModels.js";
+import { DetalleVenta } from "./detalleVentaModels.js";
 
 // Relaciones
 Producto.belongsTo(Categoria, { foreignKey: "id_categoria" });
