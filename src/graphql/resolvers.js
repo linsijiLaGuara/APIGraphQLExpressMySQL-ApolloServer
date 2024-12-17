@@ -65,4 +65,17 @@ export const resolvers = {
       }
     },
   },
+
+
+  Mutation: {
+    createCategoria: async (_, { input }) => {
+      try {
+        return await Categoria.create(input);
+      } catch (error) {
+        throw new Error('Error al crear la categoría');
+      }
+    },
+
+
+  }
 };
