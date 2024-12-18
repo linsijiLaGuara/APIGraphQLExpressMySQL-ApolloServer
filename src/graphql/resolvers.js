@@ -4,6 +4,7 @@ import { Producto } from "../models/productoModels.js";
 import { Cliente } from "../models/clienteModels.js";
 import { Venta } from "../models/ventaModels.js";
 import { DetalleVenta } from "../models/detalleVentaModels.js";
+
 export const resolvers = {
   Query: {
     ping() {
@@ -76,6 +77,12 @@ export const resolvers = {
       }
     },
 
-
+    createProveedor: async (_, { unput }) => {
+      try {
+        return await Proveedor.create(unput);
+      } catch (error) {
+        throw new Error('Error al crear la proveedores');
+      }
+    },
   }
 };

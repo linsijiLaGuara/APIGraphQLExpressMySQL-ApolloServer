@@ -106,13 +106,10 @@ export const typeDefs = gql`
     subtotal: Float!
   }
 
-  type Mutation {
-    createCategoria(input: CategoriaInput): Categoria
-    createProveedor(input: ProveedorInput): Proveedor
-    createProducto(input: ProductoInput): Producto
-    createCliente(input: ClienteInput): Cliente
-    createVenta(input: VentaInput): Venta
-    createDetalleVenta(input: DetalleVentaInput): DetalleVenta
-  }
+type Mutation {
+  createCategoria(input: CategoriaInput!): Categoria
+
+}
+}
 `;
 

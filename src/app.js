@@ -5,7 +5,7 @@ import schema from "./graphql/schema.js"; // Importa tu esquema correctamente
 // Configura el servidor de Yoga
 const yoga = createYoga({
   schema,
-  graphqlEndpoint: "/", // Endpoint de GraphQL
+  graphqlEndpoint: "/graphql", // Endpoint de GraphQL
   landingPage: false, // Desactiva la página interactiva de inicio
 });
 
