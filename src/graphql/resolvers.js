@@ -77,12 +77,6 @@ export const resolvers = {
       }
     },
 
-    createProveedor: async (_, { unput }) => {
-      try {
-        return await Proveedor.create(unput);
-      } catch (error) {
-        throw new Error('Error al crear la proveedores');
-      }
-    },
+
   }
 };

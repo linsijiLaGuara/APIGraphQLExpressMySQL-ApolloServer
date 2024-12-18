@@ -62,54 +62,10 @@ export const typeDefs = gql`
     subtotal: Float!
   }
 
-
-
-  input CategoriaInput {
-    nombre_categoria: String!
-    descripcion: String
-  }
-
-  input ProveedorInput {
-    nombre: String!
-    telefono: String
-    email: String
-    direccion: String
-  }
-
-  input ProductoInput {
-    nombre: String!
-    descripcion: String
-    id_categoria: Int
-    precio_unitario: Float!
-    cantidad: Int!
-    id_proveedor: Int
-  }
-
-  input ClienteInput {
-    nombre: String!
-    telefono: String
-    email: String
-    direccion: String
-  }
-
-  input VentaInput {
-    id_cliente: Int
-    fecha_venta: String!
-    total: Float!
-  }
-
-  input DetalleVentaInput {
-    id_venta: Int
-    id_producto: Int
-    cantidad: Int!
-    precio_unitario: Float!
-    subtotal: Float!
-  }
-
 type Mutation {
-  createCategoria(input: CategoriaInput!): Categoria
+  createCategoria(input: CategoriaInput!): Categoria!
 
 }
-}
+  
 `;
 
